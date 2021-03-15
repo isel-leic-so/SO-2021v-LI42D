@@ -11,4 +11,5 @@ Aulas de Sistemas Operativos da turma LI42D no semestre de verão de 2020/2021
 
 #### Comunicação
 * [Moodle@ISEL SO-Geral](https://2021moodle.isel.pt/course/view.php?id=5890)
+* [Moodle@ISEL SO-LI42D](https://2021moodle.isel.pt/course/view.php?id=6220)
 
