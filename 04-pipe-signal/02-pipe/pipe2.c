@@ -19,7 +19,7 @@ int main() {
 		
 		dup2(pipefd[1], 1); // substituir standard output por pipe
 		
-		sleep(10);
+		close(pipefd[1]);  // fechar a ponta de escrita (que foi duplicada)
 		
 		printf("Hello, parent!\n");
 
@@ -29,6 +29,7 @@ int main() {
 		close(pipefd[1]); // fechar a ponta que não vai usar
 
 		dup2(pipefd[0], 0);
+		close(pipefd[0]);  // fechar a ponta de leitura (que foi duplicada)
 
 		printf("PARENT: waiting for messages from child\n");
 		
