@@ -4,6 +4,7 @@
 
 .global context_switch
 .global internal_exit
+
 /*
  * void context_switch(uthread_t * currThread, uthread_t * nextThread) 
  *

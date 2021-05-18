@@ -56,8 +56,15 @@ void ut_yield();
 //
 uthread_t * ut_self();
 
+//
+// Halts the execution of the current user thread.
+//
 void ut_deactivate();
 
-void ut_activate(uthread_t * thread);
+//
+// Places the specified user thread at the end of the ready queue,
+// making it eligible to run.
+//
+void ut_activate(uthread_t * handle);
 
 #endif
