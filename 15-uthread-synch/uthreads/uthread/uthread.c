@@ -235,6 +235,13 @@ uthread_t* ut_self() {
 	return running_thread;
 }
 
+void ut_deactivate() {
+	schedule();
+}
+
+void ut_activate(uthread_t * thread) {
+	insert_list_last(&ready_queue, &thread->entry);
+}
 
 ///////////////////////////////////////
 //
@@ -343,7 +350,7 @@ uthread_t* ut_create(void (*start_routine)(void *), void * arg) {
 	// Ready the thread.
 	//
 	number_of_threads += 1;
-	insert_list_last(&ready_queue, &(thread->entry));
-	
+	ut_activate(thread);
+
 	return thread;
 }

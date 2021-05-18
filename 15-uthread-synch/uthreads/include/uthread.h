@@ -56,4 +56,8 @@ void ut_yield();
 //
 uthread_t * ut_self();
 
+void ut_deactivate();
+
+void ut_activate(uthread_t * thread);
+
 #endif
