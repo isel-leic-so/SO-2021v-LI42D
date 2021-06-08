@@ -24,8 +24,8 @@ int main() {
 	thread_pool_submit(&tp, test_func, "msg07");
 	thread_pool_submit(&tp, test_func, "msg08");
 	
-	sleep(8);
+	//sleep(8);
 	
-	// thread_pool_cleanup(&tp);
+	thread_pool_cleanup(&tp);
 	return 0;
 }

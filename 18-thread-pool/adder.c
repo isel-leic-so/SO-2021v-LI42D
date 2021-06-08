@@ -103,6 +103,6 @@ int main() {
 	test("sequential adder", seq_adder, vals, NVALS, NVALS);
 	test("parallel adder", par_adder, vals, NVALS, NVALS);
 	
-	//thread_pool_cleanup(&tpool);
+	thread_pool_cleanup(&tpool);
 	return 0;
 }
