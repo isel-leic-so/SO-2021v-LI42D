@@ -20,7 +20,7 @@ typedef struct memch {
 	sem_t  has_space;      // sincronização de controlo (espaço livre)
 	sem_t  has_items;      // sincronização de controlo (objectos)
 
-    // type_with_elem_size items[capacity];
+	// type_with_elem_size items[capacity];
 	uint8_t items[1]; // must be the last field
 } memch_t;
 
