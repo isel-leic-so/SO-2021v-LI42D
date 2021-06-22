@@ -93,7 +93,7 @@ int main(int argc, char *argv[]) {
 				error("ERROR on inet_ntoa\n");
 			}
 
-			printf("server established connection with %s in port %d\n", cli_addr_str, cli_addr.sin_port);
+			printf("server established connection with %s at port %d\n", cli_addr_str, ntohs(cli_addr.sin_port));
 
 			if (nclients == MAX_CLIENTS) {
 				puts("** maximum clients exceeded");

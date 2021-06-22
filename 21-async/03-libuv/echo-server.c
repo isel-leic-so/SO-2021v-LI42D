@@ -69,7 +69,7 @@ void prepare_client(uv_tcp_t * client) {
 	char cli_addr_str[INET_ADDRSTRLEN];
 	uv_ip4_name(&cli_addr, cli_addr_str, INET_ADDRSTRLEN);
 
-	printf("** server established connection with %s in port %d**\n", cli_addr_str, cli_addr.sin_port);
+	printf("** server established connection with %s in port %d**\n", cli_addr_str, ntohs(cli_addr.sin_port));
 	
 	uv_read_start((uv_stream_t *)client, alloc_buffer, on_read);
 }
