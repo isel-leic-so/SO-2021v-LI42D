@@ -10,7 +10,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>  // inet_ntop
 
-#include <pthread.h>
 #include "thread_pool.h"
 
 #define BUFSIZE 1024
@@ -18,7 +17,7 @@
 
 void terror(char *msg) {
 	perror(msg);
-	pthread_exit((void *)(intptr_t)1);
+	exit(1);
 }
 
 void process_connection(void * ptr) {
@@ -108,7 +107,7 @@ int main(int argc, char *argv[]) {
 			error("ERROR on inet_ntoa\n");
 		}
 
-		printf("server established connection with %s\n", cli_addr_str);
+		printf("server established connection with %s at port %d\n", cli_addr_str, ntohs(cli_addr.sin_port));
 
 		thread_pool_submit(&tpool, process_connection, (void *)(intptr_t)conn_fd);
 	}

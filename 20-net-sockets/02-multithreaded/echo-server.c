@@ -105,7 +105,7 @@ int main(int argc, char *argv[]) {
 			error("ERROR on inet_ntoa\n");
 		}
 
-		printf("server established connection with %s\n", cli_addr_str);
+		printf("server established connection with %s at port %d\n", cli_addr_str, ntohs(cli_addr.sin_port));
 
 		pthread_t thread;
 		pthread_create(&thread, NULL, process_connection, (void *)(intptr_t)conn_fd);
